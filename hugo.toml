@@ -1,0 +1,142 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Seven的个人网站'
+
+hasCJKLanguage = true
+paginate = 18
+
+[outputs]
+home = ["HTML", "Algolia"]
+
+[outputFormats]
+  [outputFormats.Algolia]
+    baseName = 'algolia'
+    isPlainText = true
+    notAlternative = true
+    mediaType = 'application/json'
+
+[Params]
+  # enableToTop = false
+  [Params.hero]
+    img = "/images/hero/hero.jpg"
+
+  # App icon config
+  [Params.app]
+   # optional site title override for the app when added to an iOS home screen or Android launcher
+   title = "Seven Demo"
+   # whether to omit favicon resource links
+   noFavicon = false
+   # modern SVG favicon to use in place of older style .png and .ico files
+   svgFavicon = "/favicon.svg"
+   # Safari mask icon color
+   iconColor = "#ffffff"
+   # Android browser theme color
+   [[app.themeColor]]
+    light = "#ffffff"
+    dark = "#252627"
+
+  # LOGO
+  [Params.logo]
+    img = '/images/logo.svg'
+    img_footer = '/images/logo-footer.svg'
+    str = 'seven-demo'
+
+  # Copyright 
+  [Params.copyright]
+    owner = 'Seven'
+    start_year = '2022'
+
+  # Article Meta
+  [Params.articleMeta]
+    enableAuthor = false
+    disableDate = false
+    disableModifiedDate = false
+    disableCountWords = false
+    disableReadTime = false
+    disableHero = false
+    disableToc = false
+  
+  # Society
+  [Params.society]
+    bilibili = ""
+    email = "linzhanqi123@gmail.com"
+    facebook = ""
+    github = ""
+    instagram = ""
+    pinterest = ""
+    tiktok = ""
+    twitter = ""
+    weibo = ""
+    youtube = ""
+    zhihu = ""
+
+  # Search-Algolia
+  [Params.algolia]
+    vars = ["title", "summary", "date", "publishdate", "permalink"]
+    params = ["tags"]
+    app_id = "995JRM5ZAU"
+    api_key = "4a1095e4b8c96d2baee42d4c64b16afa"
+    index = "hugo_theme_seven_demo"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      wrapStandAloneImageWithinParagraph = false
+      [markup.goldmark.parser.attribute]
+        block = false
+
+  [markup.tableOfContents]
+    endLevel = 3
+    startLevel = 2
+  
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
+
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    pre = "pen-tool"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "Categories"
+    pre = "categories"
+    url = "/categories/"
+    weight = 2
+  [[menu.main]]
+    name = "Tags"
+    pre = "tags"
+    url = "/tags/"
+    weight = 3
+
+[module]
+  # It is recommended that Chinese users modify the proxy configuration
+  # proxy = 'https://goproxy.cn,direct'
+  # workspace = 'off'
+  [[module.imports]]
+    path = 'github.com/mrhelloboy/seven'
+  [module.hugoVersion]
+    extended = false
+    min      = "0.112.0"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "hugo_stats.json"
+    target = "assets/watching/hugo_stats.json"
+
+[build]
+  writeStats = true
+  [[build.cachebusters]]
+    source = "assets/watching/hugo_stats\\.json"
+    target = "styles\\.css"
+  [[build.cachebusters]]
+    source = "(postcss|tailwind)\\.config\\.js"
+    target = "css"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(js|ts|jsx|tsx)"
+    target = "js"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(.*)$"
+    target = "$1"
