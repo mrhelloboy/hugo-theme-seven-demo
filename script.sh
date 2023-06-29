@@ -1,1 +1,1 @@
-HUGO_MODULE_WORKSPACE=hugo.work hugo server --disableLiveReload -D --gc
+HUGO_MODULE_WORKSPACE=hugo.work hugo server --disableLiveReload --minify --gc -D
