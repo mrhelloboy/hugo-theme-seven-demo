@@ -36,9 +36,12 @@ home = ["HTML", "Algolia"]
 
   # LOGO
   [Params.logo]
+    # Image logo or Text logo
+    # Recommended to set image as logo. (prefer)
     img = '/images/logo.svg'
     img_footer = '/images/logo-footer.svg'
-    str = 'seven-demo'
+    text = 'Seven-Demo'
+    textColor = '#50d71e'
 
   # Copyright 
   [Params.copyright]
