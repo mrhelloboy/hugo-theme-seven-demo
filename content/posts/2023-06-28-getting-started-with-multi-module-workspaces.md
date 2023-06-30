@@ -9,6 +9,7 @@ categories: ["Go tutorial"]
 tags: ["go", "go.work", "multi module"]
 URL: ""
 is_recommend: true
+description: This tutorial introduces the basics of multi-module workspaces in Go. With multi-module workspaces, you can tell the Go command that you’re writing code in multiple modules at the same time and easily build and run code in those modules. In this tutorial, you’ll create two modules in a shared multi-module workspace, make changes across those modules, and see the results of those changes in a build.
 ---
 
 This tutorial introduces the basics of multi-module workspaces in Go. With multi-module workspaces, you can tell the Go command that you’re writing code in multiple modules at the same time and easily build and run code in those modules.
@@ -24,6 +25,8 @@ In this tutorial, you’ll create two modules in a shared multi-module workspace
 - **A command terminal.** Go works well using any terminal on Linux and Mac, and on PowerShell or cmd in Windows.
 
 This tutorial requires go1.18 or later. Make sure you’ve installed Go at Go 1.18 or later using the links at [go.dev/dl](https://go.dev/dl).
+
+<!--more-->
 
 ## Create a module for your code
 
@@ -41,8 +44,6 @@ To begin, create a module for the code you’ll write.
    ```bash
    C:\> cd %HOMEPATH%
    ```
-
-   <!--more-->
 
    The rest of the tutorial will show a $ as the prompt. The commands you use will work on Windows too.
 
