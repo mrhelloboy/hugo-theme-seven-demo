@@ -12,7 +12,7 @@ tags:
   - Microservice
   - Security
   - service Mesh
-URL: "/2018/05/22/user_authentication_authorization/"
+URL: "/2018/05/22/authentication-and-authorization-of-microservice"
 categories:
   - Tech
   - 赵化冰博客
