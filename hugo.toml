@@ -5,6 +5,8 @@ title = 'Seven的个人网站'
 hasCJKLanguage = true
 paginate = 18
 
+disqusShortname = "seven-demo"
+
 [outputs]
 home = ["HTML", "Algolia"]
 
