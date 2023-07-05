@@ -76,11 +76,21 @@ home = ["HTML", "Algolia"]
 
   # Search-Algolia
   [Params.algolia]
-    vars = ["title", "summary", "date", "publishdate", "permalink"]
+    # Type of content. see: https://gohugo.io/content-management/types/
+    type = ["posts"]
+    # like pages variables. see: https://gohugo.io/variables/page/
+    vars = ["title", "description", "permalink"]
+    # Front Matter Variables. 
+    # see: https://gohugo.io/content-management/front-matter/#front-matter-variables
     params = ["tags"]
+
     app_id = "995JRM5ZAU"
     api_key = "4a1095e4b8c96d2baee42d4c64b16afa"
     index = "hugo_theme_seven_demo"
+    # see: https://www.algolia.com/doc/api-reference/widgets/snippet/js/#about
+    snippet_attr = "description"
+    # see: https://www.algolia.com/doc/api-reference/widgets/highlight/js/#examples
+    highlight_attr = "title"
 
 [markup]
   [markup.goldmark]
