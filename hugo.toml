@@ -51,15 +51,18 @@ home = ["HTML", "Algolia"]
   [Params.logo]
     # Image logo or Text logo
     # Recommended to set image as logo. (prefer)
-    img = '/images/logo.svg'
-    img_footer = '/images/logo-footer.svg'
-    text = 'Seven-Demo'
-    textColor = '#50d71e'
+    img = "/images/logo.svg"
+    img_dark = "/images/logo-footer.svg"
+    img_footer = "/images/logo-footer.svg"
+    img_height = "" # eg: 64px
+    text = "Seven-Demo"
+    textColor = "#50d71e"
+
 
   # Copyright 
   [Params.copyright]
-    owner = 'Seven'
-    start_year = '2022'
+    owner = "Seven"
+    start_year = "2022"
 
   # Article Meta
   [Params.articleMeta]
