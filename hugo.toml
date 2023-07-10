@@ -19,6 +19,17 @@ home = ["HTML", "Algolia"]
 
 [Params]
   # enableToTop = false
+
+  [Params.home]
+    # Customize the type of content to display up-to-date, 
+    # and display all content with 'IsPage=true' if not.
+    # eg: showContentTypes = ["posts", "blogs"]
+    showContentTypes = []
+    # Customize the type of content to recommended,
+    # and recommend contents with 'is_recommend=true' if not.
+    # eg: recommendedTypes = ["posts"]
+    recommendedTypes = []
+
   description = "记录学习、生活的个人博客网站"
   [Params.hero]
     img = "/images/hero/hero.jpg"
