@@ -18,6 +18,8 @@ home = ["HTML", "Algolia"]
     mediaType = 'application/json'
 
 [Params]
+  description = "Seven Demo"
+  
   enableToTop = false
   enableSearch = true
 
