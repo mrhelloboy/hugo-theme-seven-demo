@@ -18,7 +18,8 @@ home = ["HTML", "Algolia"]
     mediaType = 'application/json'
 
 [Params]
-  # enableToTop = false
+  enableToTop = false
+  enableSearch = true
 
   [Params.home]
     # Customize the type of content to display up-to-date, 
@@ -55,6 +56,7 @@ home = ["HTML", "Algolia"]
     img_dark = "/images/logo-footer.svg"
     img_footer = "/images/logo-footer.svg"
     img_height = "" # eg: 64px
+    footer_height = ""
     text = "Seven-Demo"
     textColor = "#50d71e"
 
