@@ -5,7 +5,7 @@ title = 'Seven的个人网站'
 hasCJKLanguage = true
 paginate = 18
 
-disqusShortname = "seven-demo"
+disqusShortname = ""  # "seven-demo"
 
 [outputs]
 home = ["HTML", "Algolia"]
@@ -114,12 +114,14 @@ home = ["HTML", "Algolia"]
   # Comment - Waline
   # See: https://waline.js.org/en/
   [Params.waline]
+    # https://waline.js.org/en/guide/features/pageview.html#use-alone
+    alonePageview = false
     serverURL = "https://seven-demo.comment.supcat.cn/.netlify/functions/comment"
     lang = "en"
     reaction = true
     search = true
-    comment = false
-    pageview = false
+    comment = true
+    pageview = true
 
 
 [markup]

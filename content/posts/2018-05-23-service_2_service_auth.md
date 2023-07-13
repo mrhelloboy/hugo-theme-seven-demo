@@ -54,7 +54,13 @@ SPIFFE SVID 目前支持的实现方式是 X.509 数字证书，在 x.509 SVID �
 Istio 服务网格项目的 Auth 组件实现了 SPIFFE 标准，可以为网格中服务颁发符合 SPIFFE SVID 标准的证书，并为服务提供身份认证，细粒度的操作鉴权以及通信加密。Istio 的架构如下图所示：
 ![](/img/2018-05-23-service_2_service_auth/auth.png)
 
-Istio Auth 采用了 Kubernetes 的 service account 来作为服务标识，其 SPIFFE ID 的格式为 spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;，其中各组成部分如下：
+Istio Auth 采用了 Kubernetes 的 service account 来作为服务标识，其 SPIFFE ID 的格式为
+
+```
+spiffe://<domain>/ns/<namespace>/sa/<serviceaccount>
+```
+
+其中各组成部分如下：
 
 - domain 域名
 - namspace kubernetes service account 所在的 Namespace
