@@ -22,6 +22,7 @@ home = ["HTML", "Algolia"]
   
   enableToTop = false
   enableSearch = true
+  enableComments = true
 
   [Params.home]
     # Customize the type of content to display up-to-date, 
@@ -109,6 +110,17 @@ home = ["HTML", "Algolia"]
     snippet_attr = "description"
     # see: https://www.algolia.com/doc/api-reference/widgets/highlight/js/#examples
     highlight_attr = "title"
+  
+  # Comment - Waline
+  # See: https://waline.js.org/en/
+  [Params.waline]
+    serverURL = "https://seven-demo.comment.supcat.cn/.netlify/functions/comment"
+    lang = "en"
+    reaction = true
+    search = true
+    comment = false
+    pageview = false
+
 
 [markup]
   [markup.goldmark]
