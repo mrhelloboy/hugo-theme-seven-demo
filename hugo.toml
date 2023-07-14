@@ -141,20 +141,25 @@ home = ["HTML", "Algolia"]
 
 [menu]
   [[menu.main]]
+    name = "Doc"
+    pre = ""
+    url = "/doc/"
+    weight = 1
+  [[menu.main]]
     name = "Posts"
     pre = "pen-tool"
     url = "/posts/"
-    weight = 1
+    weight = 2
   [[menu.main]]
     name = "Categories"
     pre = "categories"
     url = "/categories/"
-    weight = 2
+    weight = 3
   [[menu.main]]
     name = "Tags"
     pre = "tags"
     url = "/tags/"
-    weight = 3
+    weight = 4
 
 [module]
   # It is recommended that Chinese users modify the proxy configuration
