@@ -1,7 +1,7 @@
 ---
 title: "Seven主题配置参数说明篇"
 date: 2023-07-14T20:59:47+08:00
-draft: true
+draft: false
 author: ""
 image: "/images/doc/params.webp"
 categories: ["doc"]
