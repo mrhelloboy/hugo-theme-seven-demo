@@ -10,7 +10,7 @@ image: "/images/posts/13.jpg"
 tags:
   - Kubernetes
   - Helm
-categories: [Tech]
+categories: ["Technical", "赵化冰博客"]
 URL: "/2018/04/16/using-helm-to-deploy-to-kubernetes/"
 is_recommend: false
 ---

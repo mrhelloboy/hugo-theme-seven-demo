@@ -12,7 +12,7 @@ tags:
   - service Mesh
   - nginmesh
 URL: "/2018/01/02/nginmesh-install/"
-categories: [Tech, "test6", "赵化冰博客"]
+categories: ["赵化冰博客"]
 ---
 
 ## 前言

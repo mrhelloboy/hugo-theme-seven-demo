@@ -2,28 +2,21 @@
   "comments": {
     "dependencies": {},
     "devDependencies": {
-      "@tailwindcss/typography": "github.com/mrhelloboy/seven",
       "autoprefixer": "github.com/mrhelloboy/seven",
+      "flowbite-typography": "github.com/mrhelloboy/seven",
       "postcss": "github.com/mrhelloboy/seven",
       "postcss-cli": "github.com/mrhelloboy/seven",
-      "prettier": "github.com/mrhelloboy/seven",
-      "prettier-plugin-go-template": "github.com/mrhelloboy/seven",
-      "prettier-plugin-tailwindcss": "github.com/mrhelloboy/seven",
       "tailwindcss": "github.com/mrhelloboy/seven"
     }
   },
   "dependencies": {},
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.14",
+    "flowbite-typography": "^1.0.3",
     "postcss": "^8.4.24",
-    "postcss-cli": "^10.1.0",
-    "prettier": "^2.8.8",
-    "prettier-plugin-go-template": "^0.0.13",
-    "prettier-plugin-tailwindcss": "^0.3.0",
+    "postcss-cli": "^11.0.0",
     "tailwindcss": "^3.3.2"
   },
-  "type": "module",
   "name": "hugo-theme-seven-demo",
   "version": "0.1.0"
 }

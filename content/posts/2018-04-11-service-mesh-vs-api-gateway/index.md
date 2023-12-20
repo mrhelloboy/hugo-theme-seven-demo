@@ -13,7 +13,7 @@ tags:
   - Service Mesh
   - API Gateway
 URL: "/2018/04/11/service-mesh-vs-api-gateway/"
-categories: [Tech]
+categories: [赵化冰博客]
 is_recommend: true
 ---
 

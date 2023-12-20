@@ -11,7 +11,7 @@ tags:
   - Kubernetes
   - service Mesh
 URL: "/2017/11/28/access-application-from-outside/"
-categories: [Tech, "test5"]
+categories: [Tech]
 is_recommend: true
 ---
 

@@ -12,7 +12,7 @@ tags:
   - Microservice
   - Security
 URL: "/2018/05/22/user_authentication_authorization"
-categories: ["Tech"]
+categories: ["赵化冰博客"]
 ---
 
 > 这段时间对之前微服务安全相关的一些想法进行了进一步总结和归纳，理清了在之前文章里面没有想得太清楚的地方，例如服务间的认证与鉴权以及用户身份在服务调用链中的传递。

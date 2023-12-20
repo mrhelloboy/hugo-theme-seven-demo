@@ -1,4 +1,4 @@
-baseURL = 'https://seven-demo.supcat.cn/'
+baseURL = 'http://localhost:1313/'
 languageCode = 'en-us'
 title = 'Seven的个人网站'
 
@@ -7,36 +7,35 @@ paginate = 18
 
 disqusShortname = ""  # "seven-demo"
 
+[mediaTypes.'application/x-ndjson']
+  suffixes = ['ndjson']
+
 [outputs]
-home = ["HTML", "Algolia"]
+  home = ["HTML", "Algolia"]
 
 [outputFormats]
   [outputFormats.Algolia]
     baseName = 'algolia'
     isPlainText = true
     notAlternative = true
-    mediaType = 'application/json'
+    mediaType = 'application/x-ndjson'
 
 [Params]
   description = "Seven Demo"
   
-  enableToTop = false
   enableSearch = true
   enableComments = true
+  
+  omitCategoryOnMenu = false
+  categoryName = "Category"
 
   [Params.home]
     # Customize the type of content to display up-to-date, 
     # and display all content with 'IsPage=true' if not.
     # eg: showContentTypes = ["posts", "blogs"]
     showContentTypes = []
-    # Customize the type of content to recommended,
-    # and recommend contents with 'is_recommend=true' if not.
-    # eg: recommendedTypes = ["posts"]
-    recommendedTypes = []
 
-  description = "记录学习、生活的个人博客网站"
-  [Params.hero]
-    img = "/images/hero/hero.jpg"
+  # description = "记录学习、生活的个人博客网站"
 
   # App icon config
   [Params.app]
@@ -57,12 +56,7 @@ home = ["HTML", "Algolia"]
     # Recommended to set image as logo. (prefer)
     img = "/images/logo.svg"
     img_dark = "/images/logo-footer.svg"
-    img_footer = "/images/logo-footer.svg"
-    img_height = "" # eg: 64px
-    footer_height = ""
-    text = "Seven-Demo"
-    textColor = "#50d71e"
-
+    text = ""
 
   # Copyright 
   [Params.copyright]
@@ -81,22 +75,31 @@ home = ["HTML", "Algolia"]
   
   # Society
   [Params.society]
-    bilibili = ""
-    email = "linzhanqi123@gmail.com"
-    facebook = ""
-    github = "https://github.com/mrhelloboy/hugo-theme-seven-demo"
-    instagram = ""
-    pinterest = ""
-    tiktok = ""
-    twitter = ""
-    weibo = ""
-    youtube = ""
-    zhihu = ""
+    # If the provided society does not meet your requirements, you can add custom ones.
+    # eg: Add "extra_social.html" in the "layout/partials/" directory of your project.
+    customSocial = "extra_social.html"
+
+    [Params.society.email]
+      enable = true
+      url = "linzhanqi123@gmail.com"
+    [Params.society.github]
+      enable = true
+      url = "https://github.com/mrhelloboy/hugo-theme-seven-demo"
+    [Params.society.facebook]
+      enable = true
+      url = ""
+    [Params.society.x]  # old twitter
+      enable = true
+      url = ""
+    [Params.society.wechat]
+      enable = true
+      OrcodeUrl = ["/images/society/wechat/wechat.jpg"]
+
 
   # Search-Algolia
   [Params.algolia]
     # Type of content. see: https://gohugo.io/content-management/types/
-    type = ["posts"]
+    type = ["posts", "doc"]
     # like pages variables. see: https://gohugo.io/variables/page/
     vars = ["title", "description", "permalink"]
     # Front Matter Variables. 
@@ -140,31 +143,45 @@ home = ["HTML", "Algolia"]
   lastmod = ["lastmod", ":fileModTime", ":default"]
 
 [menu]
+[[menu.main]]
+    name = "Home"
+    pre = ""
+    url = "/"
+    weight = 10
   [[menu.main]]
     name = "Doc"
     pre = ""
     url = "/doc/"
-    weight = 1
+    weight = 20
   [[menu.main]]
     name = "Posts"
     pre = "pen-tool"
     url = "/posts/"
+    weight = 30
+  [[menu.main]]
+    name = "Archive"
+    url = "/archive"
+    weight = 40
+  [[menu.main]]
+    name = "Releases"
+    pre = "releases"
+    weight = 50
+  [[menu.main]]
+    identifier = "v1.0.0"
+    name = 'v1.0.0'
+    url = ''
+    parent = 'Releases'
+    weight = 1
+  [[menu.main]]
+    name = 'v0.1.13'
+    url = 'v0.1.13'
+    parent = 'Releases'
     weight = 2
-  [[menu.main]]
-    name = "Categories"
-    pre = "categories"
-    url = "/categories/"
-    weight = 3
-  [[menu.main]]
-    name = "Tags"
-    pre = "tags"
-    url = "/tags/"
-    weight = 4
 
 [module]
   # It is recommended that Chinese users modify the proxy configuration
   # proxy = 'https://goproxy.cn,direct'
-  # workspace = 'on'
+  workspace = 'on'
   [[module.imports]]
     path = 'github.com/mrhelloboy/seven'
   [module.hugoVersion]

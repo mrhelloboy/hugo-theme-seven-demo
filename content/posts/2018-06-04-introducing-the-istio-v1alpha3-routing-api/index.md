@@ -8,7 +8,7 @@ author: "赵化冰"
 image: "/images/posts/21.jpg"
 toc: true
 tags: ["Istio"]
-categories: [Tech]
+categories: [赵化冰博客]
 URL: "/2018/06/04/introducing-the-istio-v1alpha3-routing-api/"
 is_recommend: true
 ---

@@ -10,7 +10,7 @@ tags:
   - ubuntu
   - service Mesh
 URL: "/2018/05/24/set_up_my_ubuntu_desktop/"
-categories: ["Tips", "赵化冰博客"]
+categories: ["赵化冰博客"]
 ---
 
 ## Generate SSH Key Pair

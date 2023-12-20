@@ -11,7 +11,7 @@ tags:
   - Istio
   - service Mesh
 URL: "/2018/05/23/istio-auto-injection-with-webhook/"
-categories: ["Tech", "赵化冰博客"]
+categories: ["赵化冰博客"]
 ---
 
 ## 前言

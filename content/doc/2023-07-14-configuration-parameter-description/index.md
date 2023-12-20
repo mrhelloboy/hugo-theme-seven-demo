@@ -4,7 +4,7 @@ date: 2023-07-14T20:59:47+08:00
 draft: false
 author: ""
 image: "/images/doc/params.webp"
-categories: ["doc"]
+categories: ["使用文档"]
 tags: ["doc", "配置参数"]
 URL: ""
 layout: doc

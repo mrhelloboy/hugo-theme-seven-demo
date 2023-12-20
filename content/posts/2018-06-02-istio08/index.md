@@ -8,7 +8,7 @@ description: "在6月1日这一天的早上，Istio社区宣布发布0.8 Release
 image: "/images/posts/20.jpg"
 published: true
 tags: [Istio]
-categories: [Tech]
+categories: [赵化冰博客]
 URL: "/2018/06/02/istio08/"
 ---
 
