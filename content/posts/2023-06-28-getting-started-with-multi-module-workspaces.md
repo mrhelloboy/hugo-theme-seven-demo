@@ -4,7 +4,7 @@ title: "Getting Started With Multi Module Workspaces"
 date: 2023-06-28T22:02:42+08:00
 draft: false
 author: ""
-image: "/images/posts/2.jpg"
+image: "/images/posts/19.jpg"
 categories: ["Go tutorial"]
 tags: ["go", "go.work", "multi module"]
 URL: ""
