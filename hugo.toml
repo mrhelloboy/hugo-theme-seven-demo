@@ -56,6 +56,9 @@ disqusShortname = ""  # "seven-demo"
     # Recommended to set image as logo. (prefer)
     img = "/images/logo.svg"
     img_dark = "/images/logo-footer.svg"
+
+    # max height not greater than 56 (px). default: 56 (px)
+    customLogoHeight = '56'
     text = ""
 
   # Copyright 
