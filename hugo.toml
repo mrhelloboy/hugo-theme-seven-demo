@@ -59,6 +59,7 @@ disqusShortname = ""  # "seven-demo"
 
     # max height not greater than 56 (px). default: 56 (px)
     customLogoHeight = '56'
+    customLogoWidth = '120'
     text = ""
 
   # Copyright 
