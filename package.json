@@ -15,7 +15,7 @@
     "flowbite-typography": "^1.0.3",
     "postcss": "^8.4.24",
     "postcss-cli": "^11.0.0",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.4.0"
   },
   "name": "hugo-theme-seven-demo",
   "version": "0.1.0"
