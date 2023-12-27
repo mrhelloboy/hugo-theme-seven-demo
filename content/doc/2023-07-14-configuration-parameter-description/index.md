@@ -9,12 +9,14 @@ tags: ["doc", "配置参数"]
 URL: ""
 layout: doc
 is_recommend: true
-description: "对 Hugo 主题 Seven 需要配置到的参数进行说明"
+# description: "对 Hugo 主题 Seven 需要配置到的参数进行说明"
 ---
 
 > 因主题进行破坏性重构过(可以说是另一个主题了)，所以这里的文档配置都是过期的。新文档在编写中...
 
 对 **Seven** 主题用到的部分配置参数进行说明，希望能帮助到大家配置 `Seven主题`。
+
+<!--more-->
 
 **搜索**及**评论**相关参数会单独出篇文章进行说明。
 

@@ -5,11 +5,16 @@ date: 2023-06-28T22:02:42+08:00
 draft: false
 author: ""
 image: "/images/posts/19.jpg"
-categories: ["Go tutorial"]
+categories: ["Go tutorial", "编程技术"]
 tags: ["go", "go.work", "multi module"]
 URL: ""
 is_recommend: true
-description: This tutorial introduces the basics of multi-module workspaces in Go. With multi-module workspaces, you can tell the Go command that you’re writing code in multiple modules at the same time and easily build and run code in those modules. In this tutorial, you’ll create two modules in a shared multi-module workspace, make changes across those modules, and see the results of those changes in a build.
+description: |-
+  This tutorial introduces the basics of multi-module workspaces in Go.
+
+  With multi-module workspaces, you can tell the Go command that you’re writing code in multiple modules at the same time and easily build and run code in those modules. 
+
+  In this tutorial, you’ll create two modules in a shared multi-module workspace, make changes across those modules, and see the results of those changes in a build.
 ---
 
 This tutorial introduces the basics of multi-module workspaces in Go. With multi-module workspaces, you can tell the Go command that you’re writing code in multiple modules at the same time and easily build and run code in those modules.
