@@ -29,6 +29,12 @@ disqusShortname = ""  # "seven-demo"
   omitCategoryOnMenu = false
   categoryName = "Category"
 
+  showCodeCopyButton = true
+
+  [Params.head]
+    # Put custom css file in the assets folder, not in the static folder.
+    customCSS = "css/custom.css"
+
   [Params.home]
     # Customize the type of content to display up-to-date, 
     # and display all content with 'IsPage=true' if not.
