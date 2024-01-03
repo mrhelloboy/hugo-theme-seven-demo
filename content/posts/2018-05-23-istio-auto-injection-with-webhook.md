@@ -59,7 +59,7 @@ Admission 是 Kubernets 中的一个术语，指的是 Kubernets API Server 资�
 
 webhook 支持需要 Kubernets1.9 或者更高的版本,使用下面的命令确认 kube-apiserver 的 Admin webhook 功能已启用。
 
-```
+```bash
 kubectl api-versions | grep admissionregistration
 
 admissionregistration.k8s.io/v1beta1
@@ -98,7 +98,7 @@ kubectl apply -f install/kubernetes/istio-sidecar-injector-with-ca-bundle.yaml
 
 通过命令查看部署好的 webhook injector
 
-````
+```
 kubectl -n istio-system get deployment -listio=sidecar-injector
 Copy
 NAME                     DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
@@ -121,6 +121,5 @@ kube-system    Active    1h
 
 ## 参考
 
-* [Extensible Admission is Beta](https://kubernetes.io/blog/2018/01/extensible-admission-is-beta)
-* [Installing the Istio Sidecar](https://istio.io/docs/setup/kubernetes/sidecar-injection.html)
-````
+- [Extensible Admission is Beta](https://kubernetes.io/blog/2018/01/extensible-admission-is-beta)
+- [Installing the Istio Sidecar](https://istio.io/docs/setup/kubernetes/sidecar-injection.html)
