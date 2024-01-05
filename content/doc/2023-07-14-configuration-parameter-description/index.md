@@ -9,191 +9,268 @@ tags: ["doc", "配置参数"]
 URL: ""
 layout: doc
 is_recommend: true
-# description: "对 Hugo 主题 Seven 需要配置到的参数进行说明"
+description: "对 Hugo 主题 Seven 需要配置到的参数进行说明"
 ---
 
-> 因主题进行破坏性重构过(可以说是另一个主题了)，所以这里的文档配置都是过期的。新文档在编写中...
+本篇文档是对 `hugo.toml` 中主要参数的说明。
 
-对 **Seven** 主题用到的部分配置参数进行说明，希望能帮助到大家配置 `Seven主题`。
+## 1. 网站 Head 部分所需参数配置
 
-<!--more-->
+网站**Head**部分是指网站的 `<head>` 标签中，包括 `<title>`、`<meta>` 需要配置的信息。
 
-**搜索**及**评论**相关参数会单独出篇文章进行说明。
+### 1.1 网站标题
 
-## Logo
+网站标题是指打开网站时在浏览器标签页看到的名字
 
-配置参数：
+![web title](./web-title.png)
+
+```toml
+title = 'Seven的个人网站'
+```
+
+### 1.2 网站描述
+
+```toml
+[Params]
+  description = "Seven Demo"
+```
+
+### 1.3 Favicon 配置
+
+![favicon](favicon.png)
+
+```toml
+[Params.app]
+  ...
+  # 是否配置 favicon
+  noFavicon = false
+  # 使用的现代SVG favicon，用于替换旧式的.png和.ico文件
+  svgFavicon = "/favicon.svg"
+  iconColor = "#ffffff"
+  themeColor = "#ffffff"
+```
+
+**favicon 相关文件需要放在 `static` 目录下**
+
+![favicon files](./favicon-files.png)
+
+favicon 相关文件可以到[RealFaviconGenerator](https://realfavicongenerator.net/) 网站直接生成
+
+## 2. Menu 配置
+
+### 2.1 普通菜单
+
+只需要配置`name`和`url`，`weight`表示排序权重，`weight`越小越靠前，pre参数暂时不支持
+
+```toml
+[menu]
+  ...
+  [[menu.main]]
+    name = "Posts"
+    pre = ""
+    url = "/posts/"
+    weight = 30
+```
+
+### 2.2 如何配置子菜单
+
+子菜单需要配置参数 `parent`, 表示父菜单的名称。如 ② 所示
+
+如果导航栏中有多个子菜单，且子菜单中的名字跟其他子菜单的名字重复，需要配置 `identifier` 参数来区分，如 ① 所示
+
+```toml
+[menu]
+  ...
+  [[menu.main]]
+    name = "Releases"
+    pre = "releases"
+    weight = 50
+  [[menu.main]]
+    identifier = "v1.0.0"   # ①
+    name = 'v1.0.0'
+    url = ''
+    parent = 'Releases'   # ②
+    weight = 1
+  [[menu.main]]
+    name = 'v0.1.13'
+    url = ''
+    parent = 'Releases'
+    weight = 2
+```
+
+### 2.3 是否添加分类菜单
+
+主题支持一键配置分类菜单按钮添加到导航栏中
+
+```toml
+[Params]
+  ...
+  # 是否忽略分类菜单
+  omitCategoryOnMenu = false
+  categoryName = "Category"
+```
+
+## 3. 如何配置 Logo
+
+网站的Logo支持直接是**文字形式**及**图片形式**
+
+主题更加推荐使用图片形式的 Logo
+
+### 3.1 文字形式
+
+```toml
+[Params.logo]
+  ...
+  text = "Seven"
+```
+
+### 3.2 图片形式
+
+logo 的图片需要存放在`static`目录下，建议使用 svg 格式和 png 格式的图片。
+
+同时为了在 dark 模式下更好的显示效果，建议单独配置一个 dark 版本的
+
+logo 图片的高度和宽度支持自定义，默认高度为 56px，宽度为 130px，且高度不能超过 56px
 
 ```toml
 [Params.logo]
   img = "/images/logo.svg"
   img_dark = "/images/logo-footer.svg"
-  img_footer = "/images/logo-footer.svg"
-  img_height = ""
-  footer_height = ""
-  text = "Seven-Demo"
-  textColor = "#50d71e"
+
+  # max height not greater than 56 (px). default: 56 (px)
+  customLogoHeight = '56'
+  customLogoWidth = '120'
 ```
 
-主题的 Logo 可以配置 `图片版` 和 `文字版`，推荐配置`图片版`及使用 `svg格式` 的图片。
+## 4. 如何使用搜索功能
 
-### 图片版 Logo
-
-图片版 Logo 需要配置 3 种，分别用在正常模式、深色模式页面及页面的 Footer 区域。深色模式 logo 也可以用在 Footer 区域。所以为了更好的用户体验，至少需要准备正常、深色模式下的 logo 图。
-
-<!--more-->
-
-1. `img` 为正常模式下 logo 图片的地址
-2. `img_dark` 为深色模式下 logo 图片的地址
-3. `img_footer` 为页面 footer 区域里 logo 图片的地址
-
-**logo 图片需要存放到 `static` 目录中**
-
-网页的深色模式暂时还没开发，但深色 logo 在移动端设备上打开菜单时会用到，如图：
-
-![dark logo](./dark-logo.webp)
-
-#### 自定义 logo 图片高度
-
-通过配置`img_height`和`footer_height`参数，可以自定义导航栏和 footer 区域 logo 图片的高度，默认高度为 4rem（64px）。
-
-### 文字版 Logo
-
-配置在 `text` 和 `textColor` 即可。**注意：文字的颜色暂时没法分别配置，即在深色模式和 footer 中也是一样的**
-
-## 首页内容
-
-首页划分三部分：`hero 区域`、`最新文章区域（最多显示3篇）`和`推荐文章区域（最多显示6篇）`。
-
-### hero 区域
-
-hero 区域是首页最上面部分。如下图所示：
-
-![hero区域图](./hero.webp)
-
-配置参数：
+目前只支持 `Algolia` 搜索。如果不想启用搜索功能，可以关闭，配置参数为：
 
 ```toml
-[Params.hero]
-  img = "/images/hero/hero.jpg"
-```
-
-**hero 图片需要存在 `assets` 目录上。**
-
-### 最新三篇文章
-
-最新文章在首页中最多显示 3 篇。第一篇文章在左边，第二篇和第三篇在右边，且上下排版。
-
-**注意：** 由于第一篇文章位置关系，它的`Summary`是需要手动调整的。需要在文章内容处手动添加 **\<\!--more--\>**。可查看文档[manual-summary-splitting](https://gohugo.io/content-management/summaries/#manual-summary-splitting) 进一步了解
-
-示例：
-
-![manual-summary-splitting](./manual-summary-splitting.webp)
-
-最新内容区域可以自定义想要的文章类型，相关配置参数：
-
-```toml
-[Params.home]
-  # Customize the type of content to display up-to-date,
-  # and display all content with 'IsPage=true' if not.
-  # eg: showContentTypes = ["posts", "blogs"]
-  showContentTypes = []
-```
-
-`showContentTypes`的值是为 `.Type` 值组成的数组。具体查看[Hugo 文档 content types](https://gohugo.io/content-management/types/)及
-[page 变量说明](https://gohugo.io/variables/page/)。
-
-如果值为空数组，则显示满足 `IsPage = true` 的文章。
-
-具体代码逻辑：
-
-```
-{{ $allPages := .Site.Pages }}
-{{ with .Site.Params.home.showContentTypes }}
-    {{ $allPages = where $allPages "Type" "in" . }}
-{{ end }}
-
-{{ $lastestPosts := first 3 (where $allPages "IsPage" true) }}
-```
-
-### 推荐文章
-
-推荐文章最多显示 6 篇。且与最新文章区域类似，可以自定义想要显示的文章类型
-
-配置参数：
-
-```toml
-[Params.home]
+[Params]
   ...
-  # Customize the type of content to recommended,
-  # and recommend contents with 'is_recommend=true' if not.
-  # eg: recommendedTypes = ["posts"]
-  recommendedTypes = []
+  enableSearch = false
 ```
 
-文章需要设置为推荐才会显示在推荐文章区域。
-
-#### 设置推荐文章
-
-在文章的 `Front matter` 中添加 `is_recommend: true`。
-
-如图：
-
-![set recommend](./set-recommend.webp)
-
-## Head 部分
-
-配置 html 文档中 `<head>` 相关的信息参数
-
-有以下可配置参数：
+### 4.1 配置 Algolia 所需参数：
 
 ```toml
-languageCode = "en-us"
-title = "Seven的个人网站"
-description = "Seven Demo"
+[Params.algolia]
+  ...
+  app_id = "your algolia app id"
+  api_key = "your algolia api key"
+  index = "your algolia index name"
+  snippet_attr = "description"
+  highlight_attr = "title"
 ```
 
-## Favicon 部分
+`snippet_attr` 和 `highlight_attr` 配置 Algolia 搜索结果中显示的内容属性。具体可以参考[snippet](https://www.algolia.com/doc/api-reference/widgets/snippet/js/#about)和[highlight](https://www.algolia.com/doc/api-reference/widgets/highlight/js/#examples)。
 
-相关配置参数：
+![snippet and highlight attributes](snippet_highlight_attributes.png)
+
+### 4.2 如何配置上传到Algolia的内容
 
 ```toml
-[Params.app]
-  # optional site title override for the app when added to an iOS home screen or Android launcher
-  title = "Seven Demo"
-  # whether to omit favicon resource links
-  noFavicon = false
-  # modern SVG favicon to use in place of older style .png and .ico files
-  svgFavicon = "/favicon.svg"
-  # Safari mask icon color
-  iconColor = "#ffffff"
-  # Android browser theme color
-  themeColor = "#ffffff"
+[Params.algolia]
+  type = ["posts", "doc"]
+  vars = ["title", "description", "permalink"]
+  params = ["tags"]
+  ...
 ```
 
-如果不想配置 Favicon，可以配置 `noFavicon = true`。
+1. `type`参数: 表示你想站点的什么内容允许上传到 Algolia。在站点的 content 目录下，你创建的目录名就是 type，比如，你创建的目录名为 post，那么type就是 post。具体值可以参考[Hugo content types](https://gohugo.io/content-management/types/)
+2. `vars`参数：是 Hugo 中文章的变量，表明你文章的哪部分允许上传到 Algolia。具体值可参考[Hugo page variables](https://gohugo.io/variables/page/)
+3. `params`参数：是 Hugo 的 Front matter 变量，作用类似于`vars`参数。具体值可参考[Hugo front matter](https://gohugo.io/content-management/front-matter/#front-matter-variables)
 
-Favicon 图片有 2 种配置方式，一种是传统的 ico，另一种是使用 svg 格式，这是更加现代的方式，可参考文章[Are you using SVG favicons yet? A guide for modern browsers.](https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browsers-836a6aace3df)。
+在 Algolia 中显示这样：
 
-如果使用 svg 格式图片设置 favicon，只需要配置 `svgFavicon` 即可，如果使用传统方式，不要配置该参数。
+![Algolia record information](./record-info.png)
 
-如果使用传统的 favicon，相关图需要存放到 `static` 目录上，且不能放在子目录中。
+### 4.3 如何生成 ndjson 格式文件并上传到 Algolia
 
-### 制作 Favicon 网站
+主题支持直接生成 `ndjson` 格式的文件。
+因主题推荐使用`Algolia CLI`工具上传文件到 Algolia。但`Algolia CLI`需要使用到 `ndjson` 格式文件，而不是 JSON 格式文件。
 
-这里推荐使用 [RealFaviconGenerator 网站](https://realfavicongenerator.net/)来制作 favicon。
+在站点根目录下执行以下命令：
 
-## 显示文章信息
+```bash
+hugo
+```
 
-这里文章信息是指文章的作者、发表日期、修改日期、字数、阅读时间、hero 图片、及目录配置
+然后在`public`目录下找到`algolia.ndjson`文件，将其上传到 Algolia。
 
-默认情况下，不显示作者信息。显示发表日期、修改日期、文章字数、阅读时间、hero 图片及目录。
+```bash
+algolia objects import 'your_index_name' -F ./public/algolia.ndjson -p 'your_prifile_name'
+```
 
-如图：
+具体可以参考[Algolia CLI 官方文档](https://www.algolia.com/doc/tools/cli/get-started/overview/)。
 
-![Article meta](./article-meta.webp)
+关于 Hugo 如何生成 `ndjson` 文件的说明，可以参考文章[在Hugo中如何直接输出ndjson格式文件并上传到Algolia](https://supcat.cn/posts/2023/12/24/output-ndjson-file-in-hugo-and-upload-to-algolia/)。
 
-配置参数：
+## 5. 如何使用评论功能
+
+目前仅支持 Disqus 评论和 Waline 评论。
+
+如果不想要评论功能，可以在主题的配置文件中关闭评论功能。
+
+```toml
+enableComments = false
+```
+
+### 5.1 配置 Disqus 评论
+
+```toml
+disqusShortname = "your-disqus-shortname"
+```
+
+具体可以参考[Hugo Disqus 文档](https://gohugo.io/content-management/comments/#disqus)。
+
+### 5.2 配置 Waline 评论
+
+```toml
+[Params.waline]
+  ...
+  serverURL = "your-waline-server-url"
+  lang = "en"
+  reaction = true
+  search = true
+  comment = true
+  ...
+```
+
+使用 Waline 需要部署才可以使用，具体如何部署请参考[Waline 文档](https://waline.js.org/guide/get-started/)。
+
+### 5.3 使用 Waline 的文章浏览量统计功能
+
+Waline 提供了页面浏览量统计功能。
+
+```toml
+[Params.waline]
+  ...
+  serverURL = "your-waline-server-url"
+  ...
+  pageview = true
+```
+
+如果不想要使用 Waline 评论功能，但想使用 Waline 的浏览量统计功能，可以将 `alonePageview` 设置为 `true`：
+
+```toml
+[Params.waline]
+  alonePageview = true
+  serverURL = "your-waline-server-url"
+  ...
+  pageview = true
+```
+
+具体可以参考 [Waline pageview 文档](https://waline.js.org/en/guide/features/pageview.html#use-alone)。
+
+## 6. 如何配置首页文章的内容类型
+
+默认情况下，首页会显示`IsPage=true`且最近的4篇文章。如果需要自定义首页文章的内容，可以配置 `showContentTypes` 参数。
+
+## 7. 如何配置文章元信息
+
+目前仅支持显示作者、发表日期、更新日期、文章字数、阅读时间、文章的 Hero 图和文章的目录。
 
 ```toml
 [Params.articleMeta]
@@ -206,44 +283,60 @@ Favicon 图片有 2 种配置方式，一种是传统的 ico，另一种是使�
   disableToc = false
 ```
 
-### 文章 hero 图
-
-需要在文章的 `Front matter` 中添加 `image` 配置。比如 `image: "/images/posts/2.jpg"`
-
-**文章的 hero 图片需要存放在 `assets` 目录里**
-
-### 文章目录
-
-这里只有配置目录层级的配置：
+## 8. 支持复制文章的代码块
 
 ```toml
-[markup]
+[Params]
   ...
-
-  [markup.tableOfContents]
-    endLevel = 3
-    startLevel = 2
+  showCodeCopyButton = true
+  ...
 ```
 
-查看文档[table-of-contents](https://gohugo.io/getting-started/configuration-markup/#table-of-contents)
+## 9. 如何配置社交关系
 
-### 文章的阅读量和评论数
-
-这两个信息需要配置 [Waline](https://waline.js.org) 才能显示。在评论系统篇进一步说明。
-
-## 独立渲染 markdown 图片配置说明（重要）
-
-配置：
+目前仅支持邮箱、Github、Facebook、X（原Twitter）和微信。
 
 ```toml
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.parser]
-      wrapStandAloneImageWithinParagraph = false
-      [markup.goldmark.parser.attribute]
-        block = false
+[Params.society]
+  ...
+  [Params.society.email]
+    enable = true
+    url = "your-email-url"
+  [Params.society.github]
+    enable = true
+    url = "your-github-url"
+  [Params.society.facebook]
+    enable = true
+    url = "your-facebook-url"
+  [Params.society.x]  # old twitter
+    enable = true
+    url = "your-x-url"
+  [Params.society.wechat]
+    enable = true
+    OrcodeUrl = ["微信二维码图片地址1", "微信二维码图片地址2"]
 ```
 
-[文档说明 Context passed to render-heading](https://gohugo.io/templates/render-hooks/#context-passed-to-render-heading)
+社交关系支持二维码的形式，比如个人微信二维码和公众号二维码。
 
-[Github 相关说明（详细）](https://github.com/gohugoio/hugo/releases/tag/v0.108.0)
+### 9.1 自定义添加额外的社交关系
+
+主题支持的社交关系是有限的，但主题支持自定义添加社交关系。
+
+```toml
+[Params.society]
+  customSocial = "your_custom_social.html"
+```
+
+自定义的社交关系需要编写代码，并放置在`layouts/partials/`目录中。
+可以参考Demo中代码，文件目录为 `layouts/partials/extra_social.html`。
+
+## 10. 自定义主题样式
+
+如果主题一些样式不满足你的需求，可以通过自定义样式来满足。
+
+```toml
+[Params.head]
+  customCSS = "css/your_custom.css"
+```
+
+自定义的样式文件需要放在项目的`assets`目录中，不能放在`static`目录上。可以参考Demo的`assets/css/custom.css`。
