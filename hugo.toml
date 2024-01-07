@@ -195,12 +195,12 @@ disqusShortname = ""  # "seven-demo"
     weight = 50
   [[menu.main]]
     identifier = "comments-with-waline"
-    name = 'comments with waline'
+    name = 'with waline'
     url = 'https://seven-demo.supcat.cn/'
     parent = 'Releases'
     weight = 1
   [[menu.main]]
-    name = 'comments with twikoo'
+    name = 'with twikoo'
     url = 'https://seven-demo-with-twikoo.netlify.app/'
     parent = 'Releases'
     weight = 2
