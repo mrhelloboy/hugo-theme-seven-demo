@@ -149,6 +149,11 @@ disqusShortname = ""  # "seven-demo"
       lang = "en"
       region = ""
   
+  # Analytics
+  [Params.analytics]
+    [Params.analytics.goatcounter]
+      enable = true
+      code = "seven-demo"  
 
 
 [markup]
