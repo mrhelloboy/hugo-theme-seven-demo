@@ -223,6 +223,7 @@ disqusShortname = ""  # "seven-demo"
     target = "assets/watching/hugo_stats.json"
 
 [build]
+  noJSConfigInAssets = true
   writeStats = true
   [[build.cachebusters]]
     source = "assets/watching/hugo_stats\\.json"
