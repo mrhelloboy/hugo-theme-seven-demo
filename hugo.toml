@@ -31,6 +31,9 @@ disqusShortname = ""  # "seven-demo"
 
   showCodeCopyButton = true
 
+  disableToTop = false
+  disableToBottom = false
+
   [Params.head]
     # Put custom css file in the assets folder, not in the static folder.
     customCSS = "css/custom.css"
@@ -124,17 +127,28 @@ disqusShortname = ""  # "seven-demo"
     # see: https://www.algolia.com/doc/api-reference/widgets/highlight/js/#examples
     highlight_attr = "title"
   
-  # Comment - Waline
-  # See: https://waline.js.org/en/
-  [Params.waline]
-    # https://waline.js.org/en/guide/features/pageview.html#use-alone
-    alonePageview = false
-    serverURL = "https://seven-demo.comment.supcat.cn/.netlify/functions/comment"
-    lang = "en"
-    reaction = true
-    search = true
-    comment = true
-    pageview = true
+  # Comments
+  [Params.comment]
+    enable = true
+    # Note: only works if waline or twikoo is enabled.
+    enableCounts = true
+    [Params.comment.waline]
+      enable = true
+      # https://waline.js.org/en/guide/features/pageview.html#use-alone
+      # alonePageview = false
+      serverURL = "https://seven-demo.comment.supcat.cn/.netlify/functions/comment"
+      lang = "en"
+      reaction = true
+      search = true
+      # comment = true
+      # pageview = true
+    [Params.comment.twikoo]
+      enable = true
+      envID = "https://celebrated-youtiao-8a8d79.netlify.app/.netlify/functions/twikoo"
+      path = ""
+      lang = "en"
+      region = ""
+  
 
 
 [markup]
