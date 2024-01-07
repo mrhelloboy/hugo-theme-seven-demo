@@ -1,4 +1,4 @@
-baseURL = 'https://seven-demo.supcat.cn/'
+baseURL = 'https://seven-demo-with-twikoo.netlify.app/'
 languageCode = 'en-us'
 title = 'Seven的个人网站'
 
@@ -194,14 +194,14 @@ disqusShortname = ""  # "seven-demo"
     pre = "releases"
     weight = 50
   [[menu.main]]
-    identifier = "v1.0.0"
-    name = 'v1.0.0'
-    url = ''
+    identifier = "comments-with-waline"
+    name = 'comments with waline'
+    url = 'https://seven-demo.supcat.cn/'
     parent = 'Releases'
     weight = 1
   [[menu.main]]
-    name = 'v0.1.13'
-    url = 'v0.1.13'
+    name = 'comments with twikoo'
+    url = 'https://seven-demo-with-twikoo.netlify.app/'
     parent = 'Releases'
     weight = 2
 
