@@ -85,6 +85,9 @@ disqusShortname = ""  # "seven-demo"
     disableReadTime = false
     disableHero = false
     disableToc = false
+
+    # Note: only works if waline or twikoo is enabled.
+    enablePageView = true
   
   # Society
   [Params.society]
@@ -134,14 +137,10 @@ disqusShortname = ""  # "seven-demo"
     enableCounts = true
     [Params.comment.waline]
       enable = true
-      # https://waline.js.org/en/guide/features/pageview.html#use-alone
-      # alonePageview = false
       serverURL = "https://seven-demo.comment.supcat.cn/.netlify/functions/comment"
       lang = "en"
       reaction = true
       search = true
-      # comment = true
-      # pageview = true
     [Params.comment.twikoo]
       enable = true
       envID = "https://celebrated-youtiao-8a8d79.netlify.app/.netlify/functions/twikoo"
