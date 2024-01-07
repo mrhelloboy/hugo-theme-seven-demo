@@ -9,6 +9,7 @@ categories: ["Go tutorial", "编程技术"]
 tags: ["go", "go.work", "multi module"]
 URL: ""
 is_recommend: true
+disableComment: false
 description: |-
   This tutorial introduces the basics of multi-module workspaces in Go.
 

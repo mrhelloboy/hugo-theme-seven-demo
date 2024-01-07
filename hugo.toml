@@ -24,7 +24,6 @@ disqusShortname = ""  # "seven-demo"
   description = "Seven Demo"
   
   enableSearch = true
-  enableComments = true
   
   omitCategoryOnMenu = false
   categoryName = "Category"
@@ -42,7 +41,7 @@ disqusShortname = ""  # "seven-demo"
     # Customize the type of content to display up-to-date, 
     # and display all content with 'IsPage=true' if not.
     # eg: showContentTypes = ["posts", "blogs"]
-    showContentTypes = []
+    showContentTypes = ["posts", "doc"]
 
   # description = "记录学习、生活的个人博客网站"
 
@@ -142,7 +141,7 @@ disqusShortname = ""  # "seven-demo"
       reaction = true
       search = true
     [Params.comment.twikoo]
-      enable = true
+      enable = false
       envID = "https://celebrated-youtiao-8a8d79.netlify.app/.netlify/functions/twikoo"
       path = ""
       lang = "en"
@@ -171,24 +170,24 @@ disqusShortname = ""  # "seven-demo"
   lastmod = ["lastmod", ":fileModTime", ":default"]
 
 [menu]
-[[menu.main]]
-    name = "Home"
-    pre = ""
-    url = "/"
-    weight = 10
   [[menu.main]]
     name = "Doc"
     pre = ""
     url = "/doc/"
-    weight = 20
+    weight = 10
   [[menu.main]]
     name = "Posts"
     pre = "pen-tool"
     url = "/posts/"
-    weight = 30
+    weight = 20
   [[menu.main]]
     name = "Archive"
     url = "/archive"
+    weight = 30
+  [[menu.main]]
+    name = "Goods"
+    pre = ""
+    url = "/goods/"
     weight = 40
   [[menu.main]]
     name = "Releases"
