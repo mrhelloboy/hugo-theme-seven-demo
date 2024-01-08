@@ -1,4 +1,4 @@
-baseURL = 'https://seven-demo.supcat.cn/'
+baseURL = 'https://seven-demo-with-twikoo.netlify.app/'
 languageCode = 'en-us'
 title = 'Seven的个人网站'
 
@@ -135,13 +135,13 @@ disqusShortname = ""  # "seven-demo"
     # Note: only works if waline or twikoo is enabled.
     enableCounts = true
     [Params.comment.waline]
-      enable = true
+      enable = false
       serverURL = "https://seven-demo.comment.supcat.cn/.netlify/functions/comment"
       lang = "en"
       reaction = true
       search = true
     [Params.comment.twikoo]
-      enable = false
+      enable = true
       envID = "https://celebrated-youtiao-8a8d79.netlify.app/.netlify/functions/twikoo"
       path = ""
       lang = "en"
