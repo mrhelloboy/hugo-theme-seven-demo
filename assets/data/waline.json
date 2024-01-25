@@ -1,6 +1,5 @@
 {
   "locale": {
-    "placeholder": " Comment here",
     "mail": "Email"
   },
   "meta": ["nick", "mail"]
