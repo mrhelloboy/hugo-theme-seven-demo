@@ -1,6 +1,6 @@
 .PHONY: start
 start:
-	HUGO_MODULE_WORKSPACE=hugo.work hugo server --disableLiveReload --minify --gc -D
+	env HUGO_MODULE_PROXY=https://goproxy.cn HUGO_MODULE_WORKSPACE=hugo.work hugo server --disableLiveReload --minify --gc -D
 
 .PHONY: public
 public:

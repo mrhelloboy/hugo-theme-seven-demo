@@ -33,6 +33,8 @@ disqusShortname = ""  # "seven-demo"
   disableToTop = false
   disableToBottom = false
 
+  enableHighlight = true
+
   [Params.head]
     # Put custom css file in the assets folder, not in the static folder.
     customCSS = "css/custom.css"
@@ -155,6 +157,8 @@ disqusShortname = ""  # "seven-demo"
 
 
 [markup]
+  [markup.highlight]
+    noClasses = false
   [markup.goldmark]
     [markup.goldmark.parser]
       wrapStandAloneImageWithinParagraph = false
