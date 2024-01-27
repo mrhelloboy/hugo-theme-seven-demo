@@ -255,8 +255,4 @@ go work edit edits the go.work file similarly to go mod edit
 go work sync syncs dependencies from the workspace’s build list into each of the workspace modules.
 See [Workspaces](https://go.dev/ref/mod#workspaces) in the Go Modules Reference for more detail on workspaces and go.work files.
 
----
-
-> **Copyright Notice:**
->
 > This article comes from the go official website documentation: [Tutorial: Getting started with multi-module workspaces](https://go.dev/doc/tutorial/workspaces)

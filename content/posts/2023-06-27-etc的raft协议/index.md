@@ -6,7 +6,7 @@ author: ""
 image: "images/posts/1.jpg"
 categories: ["etcd学习"]
 tags: ["etcd", "raft"]
-URL: "/2023/06/27/etcd如何实现高可用-数据强一致的"
+URL: "/posts/2023/06/27/etcd如何实现高可用-数据强一致的"
 is_recommend: true
 description: |-
   介绍分布式系统中实现多副本技术的一系列方案，从主从复制到去中心化复制、再到状态机、共识算法，并分析各个方案的优缺点，如何选择主流存储的产品。
