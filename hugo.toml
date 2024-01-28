@@ -1,10 +1,9 @@
 baseURL = 'https://seven-demo.supcat.cn/'
 languageCode = 'en-us'
 title = 'Seven的个人网站'
-
 hasCJKLanguage = true
 paginate = 18
-
+enableGitInfo = true
 disqusShortname = ""  # "seven-demo"
 
 [mediaTypes.'application/x-ndjson']
@@ -23,16 +22,13 @@ disqusShortname = ""  # "seven-demo"
 [Params]
   description = "Seven Demo"
   
-  enableSearch = true
-  
   omitCategoryOnMenu = false
   categoryName = "Category"
-
+  
   showCodeCopyButton = true
-
   disableToTop = false
   disableToBottom = false
-
+  enableSearch = true
   enableHighlight = true
 
   [Params.head]
@@ -44,8 +40,6 @@ disqusShortname = ""  # "seven-demo"
     # and display all content with 'IsPage=true' if not.
     # eg: showContentTypes = ["posts", "blogs"]
     showContentTypes = ["posts", "doc"]
-
-  # description = "记录学习、生活的个人博客网站"
 
   # App icon config
   [Params.app]
@@ -112,7 +106,6 @@ disqusShortname = ""  # "seven-demo"
       enable = true
       OrcodeUrl = ["/images/society/wechat/wechat.jpg"]
 
-
   # Search-Algolia
   [Params.algolia]
     # Type of content. see: https://gohugo.io/content-management/types/
@@ -155,7 +148,6 @@ disqusShortname = ""  # "seven-demo"
       enable = true
       code = "seven-demo"  
 
-
 [markup]
   [markup.highlight]
     noClasses = false
@@ -168,10 +160,6 @@ disqusShortname = ""  # "seven-demo"
   [markup.tableOfContents]
     endLevel = 3
     startLevel = 2
-  
-
-[frontmatter]
-  lastmod = ["lastmod", ":fileModTime", ":default"]
 
 [menu]
   [[menu.main]]
