@@ -2,4 +2,4 @@ module github.com/mrhelloboy/hugo-theme-seven-demo
 
 go 1.20
 
-require github.com/mrhelloboy/seven v1.5.4 // indirect
+require github.com/mrhelloboy/seven v1.6.0 // indirect
