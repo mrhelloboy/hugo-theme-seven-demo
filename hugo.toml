@@ -73,11 +73,6 @@ disqusShortname = ""  # "seven-demo"
 
   # Article Meta
   [Params.articleMeta]
-    enableAuthor = false
-    disableDate = false
-    disableModifiedDate = false
-    disableCountWords = false
-    disableReadTime = false
     disableHero = false
     disableToc = false
 

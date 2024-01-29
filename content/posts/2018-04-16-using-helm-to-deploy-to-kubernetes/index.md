@@ -370,6 +370,7 @@ Helm 作为 kubernetes 应用的包管理以及部署工具，提供了应用打
 **A**: 采用 Helm 可以把零散的 Kubernetes 应用配置文件作为一个 chart 管理，chart 源码可以和源代码一起放到 git 库中管理。Helm 还简了在 CI/CD pipeline 的软件部署流程。通过把 chart 参数化，可以在测试环境和生产环境可以采用不同的 chart 参数配置。
 
 下图是采用了 Helm 的一个 CI/CD 流程
+
 ![Helm 的一个 CI/CD 流程](./ci-cd-jenkins-helm-k8s.png)
 
 **Q**: 感谢分享，请问下多环境(test,staging，production)的业务配置如何管理呢？通过 heml 打包 configmap 吗，比如配置文件更新，也要重新打 chats 包吗？谢谢，这块我比较乱<BR>
